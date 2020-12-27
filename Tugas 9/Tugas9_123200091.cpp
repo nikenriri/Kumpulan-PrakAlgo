@@ -59,12 +59,17 @@ int main()
     for(i=0; i < banyak_angka; i++){
     if(i+1 >= banyak_angka){
        break;
-    }else{
+    }else if(angka[i]<angka[i+1]){
        angka[i+1]-angka[i];
-        if(max < angka[i+1]-angka[i]){
+       if(max < angka[i+1]-angka[i]){
          max = angka[i+1]-angka[i];
+       }
+    }else if(angka[i]>angka[i+1]){
+        angka[i]-angka[i+1];
+        if(max < angka[i]-angka[i+1]){
+         max = angka[i]-angka[i+1];
+      }
     }
-  }
 }
  cout << "selisih max : " << max << endl;
 
